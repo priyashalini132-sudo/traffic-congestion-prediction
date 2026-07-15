@@ -314,7 +314,11 @@ if page == "🏠 Overview":
         st.markdown('<div class="section-header">Congestion Heat Map · Junction × Hour</div>', unsafe_allow_html=True)
         pivot = df.groupby(["Junction", "Hour"])["Vehicles"].mean().reset_index()
         pivot = pivot.pivot(index="Junction", columns="Hour", values="Vehicles")
-
+        fig = px.imshow(
+              pivot,
+        labels=dict(x="Hour", y="Junction", color="Avg Vehicles"),
+        aspect="auto"
+        )
        
         apply_theme(fig)
         fig.update_layout(height=260, title="")
