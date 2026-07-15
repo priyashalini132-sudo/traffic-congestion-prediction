@@ -1,0 +1,108 @@
+{
+    "best_model_name": "XGBoost",
+    "metrics": [
+        {
+            "Model": "Linear Regression",
+            "MAE": 8.60532783892779,
+            "RMSE": 11.992877491600419,
+            "R2": 0.8059476779635447
+        },
+        {
+            "Model": "Decision Tree",
+            "MAE": 6.44606032822437,
+            "RMSE": 11.68474601570941,
+            "R2": 0.8157911026773051
+        },
+        {
+            "Model": "Random Forest",
+            "MAE": 5.629124107621267,
+            "RMSE": 9.03539958066493,
+            "R2": 0.8898544955574546
+        },
+        {
+            "Model": "Gradient Boosting",
+            "MAE": 5.610171786812242,
+            "RMSE": 8.616593851389977,
+            "R2": 0.8998287035559269
+        },
+        {
+            "Model": "XGBoost",
+            "MAE": 5.259852409362793,
+            "RMSE": 8.22117526746148,
+            "R2": 0.9088115692138672
+        }
+    ],
+    "preprocessing_summary": {
+        "raw_shape": [
+            48120,
+            4
+        ],
+        "clean_shape": [
+            48120,
+            4
+        ],
+        "duplicates_removed": 0,
+        "missing_values_raw": 0,
+        "missing_values_clean": 0,
+        "min_date": "2015-11-01 00:00:00",
+        "max_date": "2017-06-30 23:00:00",
+        "junctions": [
+            1,
+            2,
+            3,
+            4
+        ]
+    },
+    "feature_cols": [
+        "Junction_1",
+        "Junction_2",
+        "Junction_3",
+        "Junction_4",
+        "Hour",
+        "Day",
+        "DayOfWeek",
+        "Month",
+        "Year",
+        "IsWeekend",
+        "IsRushHour",
+        "TimeOfDay",
+        "Hour_sin",
+        "Hour_cos",
+        "DayOfWeek_sin",
+        "DayOfWeek_cos",
+        "Month_sin",
+        "Month_cos",
+        "Hist_Traffic_J_D_H",
+        "Hist_Traffic_J_H"
+    ],
+    "feature_importances": {
+        "Hist_Traffic_J_D_H": 0.6198673248291016,
+        "Year": 0.2099401205778122,
+        "Month": 0.06529071927070618,
+        "Junction_4": 0.019006716087460518,
+        "Junction_1": 0.01614520512521267,
+        "Junction_3": 0.013634653761982918,
+        "Month_sin": 0.010562819428741932,
+        "Month_cos": 0.007068513892591,
+        "Day": 0.006516935769468546,
+        "DayOfWeek": 0.006053792778402567,
+        "Junction_2": 0.005968505050987005,
+        "Hist_Traffic_J_H": 0.004398300778120756,
+        "DayOfWeek_cos": 0.0031373072415590286,
+        "DayOfWeek_sin": 0.0030503696762025356,
+        "Hour_cos": 0.002477615838870406,
+        "Hour": 0.0021731851156800985,
+        "TimeOfDay": 0.0021090225782245398,
+        "Hour_sin": 0.001976067665964365,
+        "IsRushHour": 0.0006229466525837779,
+        "IsWeekend": 0.0
+    },
+    "train_date_range": {
+        "min": "2015-11-01 00:00:00",
+        "max": "2017-03-22 17:00:00"
+    },
+    "test_date_range": {
+        "min": "2017-03-22 18:00:00",
+        "max": "2017-06-30 23:00:00"
+    }
+}
