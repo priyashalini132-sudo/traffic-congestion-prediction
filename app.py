@@ -315,17 +315,7 @@ if page == "🏠 Overview":
         pivot = df.groupby(["Junction", "Hour"])["Vehicles"].mean().reset_index()
         pivot = pivot.pivot(index="Junction", columns="Hour", values="Vehicles")
 
-        fig = go.Figure(go.Heatmap(
-            z=pivot.values,
-            x=list(pivot.columns),
-            y=[f"Junction {i}" for i in pivot.index],
-            colorscale=[
-                [0.0, "#0f172a"], [0.3, "#1d4ed8"], [0.6, "#f59e0b"], [1.0, "#ef4444"]
-            ],
-            colorbar=dict(title="Avg Vehicles", tickfont=dict(color="#94a3b8")),
-            hoverongaps=False,
-            hovertemplate="Junction: %{y}<br>Hour: %{x}:00<br>Avg Vehicles: %{z:.0f}<extra></extra>"
-        ))
+       
         apply_theme(fig)
         fig.update_layout(height=260, title="")
         st.plotly_chart(fig, use_container_width=True)
@@ -709,7 +699,7 @@ elif page == "📊 EDA & Analysis":
 
         # Resample for readability
         resample_opt = st.radio("Granularity", ["Hourly", "Daily", "Weekly"], horizontal=True, key="ts_gran")
-        rule_map = {"Hourly": "1H", "Daily": "D", "Weekly": "W"}
+        rule_map = {"Hourly": "h", "Daily": "D", "Weekly": "W-SUN"}
         ts_res = ts.resample(rule_map[resample_opt]).mean().dropna().reset_index()
 
         fig_ts = go.Figure()
