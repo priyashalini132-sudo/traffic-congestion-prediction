@@ -523,7 +523,7 @@ elif page == "🔮 Live Predict":
             hovertemplate="%{x}<br>Vehicles: %{y:.0f}<extra></extra>"
         ))
         apply_theme(fig_j)
-        fig_j.update_layout(height=280, yaxis_title="Predicted Vehicles")
+        fig_j.update_layout(height=280,title=NONE, yaxis_title="Predicted Vehicles")
         st.plotly_chart(fig_j, use_container_width=True)
 
 
